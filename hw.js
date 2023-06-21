@@ -15,13 +15,13 @@ if(hamburger > 3 && fries > 0){
 let price = 1000;
 
 if(price > 999 && price < 1901){
-    console.log('Ціна в потрібних межах')
+    console.log('Ціна товару знаходиться між 1000 та 1900')
 } 
 
 
 // Завдання 3//
 
-let price1 = 1905;
+var price1 = 1000;
 
 if(price1 < 1901 && price1 > 999){
     console.log('Ціна не в межах')
@@ -30,13 +30,13 @@ if(price1 < 1901 && price1 > 999){
 }
 
 
-//let price2 = 1905;
+var price2 = 1200;
 
-if(price2 != 999){
-    console.log('Ціна не в межах')
-} else{
-    console.log('Ціна в потрібних межах')
-}//
+if (!(price2 >= 1000 && price2 <= 1900)) {
+  console.log("Ціна товару не знаходиться між 1000 та 1900.");
+} else {
+  console.log("Ціна товару знаходиться між 1000 та 1900.");
+}
 
 
 // Завдання 4//
@@ -44,43 +44,45 @@ if(price2 != 999){
 var season = 4;
 
 if(season == 1){
-    console.log(' Winter ')
+    console.log('Winter')
 }
  else if(season == 2){
-    console.log(' Spring ')
+    console.log('Spring')
 }
   else if(season == 3){
-    console.log(' Summer ')
+    console.log('Summer')
 }
   else{
-    console.log(' Fall ')
+    console.log('Fall')
 }
 
  
  // Завдання 5//
 
-var a = 5, b = 6, c = 7
-var avg
+ var a = 5;
+ var b = 10;
+ var c = 7;
+ var middle;
+ 
+ if (a < b) {
+   if (b < c) {
+     middle = b;
+   } else if (a < c) {
+     middle = c;
+   } else {
+     middle = a;
+   }
+ } else {
+   if (a < c) {
+     middle = a;
+   } else if (b < c) {
+     middle = c;
+   } else {
+     middle = b;
+   }
+ }
 
-if(a > b){
-    if(a > c){
-        if(b > c){
-            avg = b
-        } else  avg = c
-    }
-} else avg = a
-    
- {
-    if(b > c){
-    if(a > c)
-      avg = a
-    else
-      avg = c
-        }
-else avg = b
-    }
-    console.log('avg("+ a +", "+ b +", "+ c +") = " "')
-    
+ console.log("Середнє число: " + middle);
 
 
 
@@ -98,7 +100,6 @@ switch(week){
     case 3:
         console.log('Wednesday');
         break;
-        //ggggg
     case 4:
         console.log('Thursday');
         break;
@@ -117,37 +118,52 @@ switch(week){
 
 // Завдання 7//
 
-const calc = (num1, num2 , operator) =>{
-    switch(operator){
-        case '+':
-            return num1 + num2;
-            break;
-        case '-':
-            return num1 - num2;
-                break;
-        case '*':
-            return num1 * num2;
-                    break;
-        case '/':
-            return num1 / num2;
-                        break;
-    }
+var operator = "-";
+var x = 10;
+var y = 5;
+var result;
+
+switch (operator) {
+  case "+":
+    result = x + y;
+    break;
+  case "-":
+    result = x - y;
+    break;
+  case "*":
+    result = x * y;
+    break;
+  case "/":
+    result = x / y;
+    break;
+  default:
+    console.log("Невідомий оператор");
 }
 
-console.log(calc(1, 5,'*'));
-
+console.log("Результат: " + result);
 
 
 // Завдання 8//
 
+var word = "Hello world";
+var vowelsRegex = /[aeiou]/gi;
+var result = word.replace(vowelsRegex, "");
+
+console.log("Результат: " + result);
 
 
 // Завдання 9//
+ 
+var meters = 4000;
+var kilometers = meters / 1000;
 
-let metr = 4000;
-let kilometr = metr/1000
-let arr = [metr, kilometr]
-let result = "";
+if (kilometers === 1) {
+  result = "Результат: " + kilometers + " кілометр";
+} 
+ else if (kilometers > 5 && kilometers < 99) {
+    result = "Результат: " + kilometers + " кілометрів";
+  } else {
+  result = "Результат: " + kilometers.toFixed(2) + " кілометра";
+}
 
-
-
+console.log(result);
